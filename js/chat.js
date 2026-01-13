@@ -46,6 +46,7 @@ function btnClick(el) {
 
   if ($el.hasClass("active")) {
     $(".chat-action-bar button").removeClass("active");
+    $(".chat-title").html("통합 상담");
     return;
   }
 
