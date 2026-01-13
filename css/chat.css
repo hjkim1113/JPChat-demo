@@ -172,7 +172,7 @@ body {
   background: #3a3b44;
 }
 
-/* 모바일 요약 패널 오버레이 */
+/* 모바일 요약 패널 */
 @media (max-width: 1199px) {
   #leftSummary {
     position: fixed;
