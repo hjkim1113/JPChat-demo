@@ -40,3 +40,28 @@ function goto_form() {
   );
   modal.show();
 }
+
+function btnClick(el) {
+  const $el = $(el);
+
+  if ($el.hasClass("active")) {
+    $(".chat-action-bar button").removeClass("active");
+    return;
+  }
+
+  $(".chat-action-bar button").removeClass("active");
+  $el.addClass("active");
+  getSelectedField();
+}
+
+function getSelectedField() {
+  const $btn = $(".chat-action-bar button.active");
+  let btnText = $btn.length ? $btn.text().trim() : null;
+
+  $(".chat-title").html(btnText + " 상담");
+}
+
+$("#summaryToggle").on("click", function () {
+  $("#leftSummary").toggleClass("show");
+});
+
