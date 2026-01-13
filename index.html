@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/chat.css">
+</head>
+<body>
+
+  <div class="chat-wrapper">
+
+    <!-- 헤더 -->
+    <header class="chat-header">
+      <div class="chat-title">세무 상담</div>
+      <div class="application-btn" onclick="goto_form()">상담신청</div>
+    </header>
+
+    <!-- 가운데 정렬 레이아웃 -->
+    <div class="container-fluid chat-shell">
+      <div class="row justify-content-center h-100">
+        <!-- 중앙 컬럼: 화면 크기별 폭 조절 -->
+        <div class="col-12 col-md-10 col-lg-8 col-xl-6 chat-column">
+
+          <!-- 메시지 영역 -->
+          <main class="chat-body" id="chatBody">
+            <div class="message bot">
+              <div class="bubble">안녕하세요. 무엇을 도와드릴까요?</div>
+            </div>
+          </main>
+
+          <!-- 입력 영역 -->
+          <footer class="chat-input-area">
+            <form id="chatForm">
+              <input
+                type="text"
+                id="chatInput"
+                placeholder="메시지를 입력하세요..."
+                autocomplete="off"
+              />
+              <button type="submit">전송</button>
+            </form>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 상담신청 모달 -->
+  <div class="modal fade" id="applicationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title">세무 상담 신청</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="mb-3">
+            <label for="consultName" class="form-label text-secondary">이름</label>
+            <input
+              type="text"
+              id="consultName"
+              class="form-control bg-dark text-light border-secondary"
+              placeholder="이름을 입력하세요"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="consultEmail" class="form-label text-secondary">이메일</label>
+            <input
+              type="email"
+              id="consultEmail"
+              class="form-control bg-dark text-light border-secondary"
+              placeholder="example@email.com"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="consultMessage" class="form-label text-secondary">상담 내용</label>
+            <textarea
+              id="consultMessage"
+              class="form-control bg-dark text-light border-secondary"
+              rows="4"
+              placeholder="상담 내용을 자유롭게 작성하세요"
+            ></textarea>
+          </div>
+
+          <button class="btn btn-primary w-100 mb-2">다음</button>
+          <button class="btn btn-outline-danger w-100" data-bs-dismiss="modal">닫기</button>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/chat.js"></script>
+</body>
+</html>
