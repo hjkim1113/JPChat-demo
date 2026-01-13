@@ -4,7 +4,7 @@ const chatBody = document.getElementById("chatBody");
 const chatForm = document.getElementById("chatForm");
 const chatInput = document.getElementById("chatInput");
 
-chatForm.addEventListener("submit", function (e) {
+chatForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const text = chatInput.value.trim();
@@ -13,9 +13,11 @@ chatForm.addEventListener("submit", function (e) {
   addMessage("user", text);
   chatInput.value = "";
 
-  // 더미 응답 (나중에 API 연결)
   setTimeout(() => {
-    addMessage("bot", "이것은 예시 응답입니다.\nLLM API를 연결하면 실제 응답이 들어옵니다.");
+    addMessage(
+      "bot",
+      "이것은 예시 응답입니다.\nLLM API를 연결하면 실제 응답이 들어옵니다."
+    );
   }, 500);
 });
 
@@ -29,7 +31,6 @@ function addMessage(type, text) {
 
   msg.appendChild(bubble);
   chatBody.appendChild(msg);
-
   chatBody.scrollTop = chatBody.scrollHeight;
 }
 
