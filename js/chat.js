@@ -46,7 +46,7 @@ function btnClick(el) {
 
   if ($el.hasClass("active")) {
     $(".chat-action-bar button").removeClass("active");
-    $(".chat-title").html("통합 상담");
+    $(".main-title").html("통합 상담");
     return;
   }
 
@@ -59,7 +59,7 @@ function getSelectedField() {
   const $btn = $(".chat-action-bar button.active");
   let btnText = $btn.length ? $btn.text().trim() : null;
 
-  $(".chat-title").html(btnText + " 상담");
+  $(".main-title").html(btnText + " 상담");
 }
 
 $("#summaryToggle").on("click", function () {
