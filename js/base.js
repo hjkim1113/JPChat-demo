@@ -12,3 +12,10 @@ function page_redirect(el) {
   const href = el.dataset.href;
   window.location.href = href;
 }
+
+function goto_form() {
+  const modal = new bootstrap.Modal(
+    document.getElementById("applicationModal")
+  );
+  modal.show();
+}

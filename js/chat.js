@@ -34,13 +34,6 @@ function addMessage(type, text) {
   chatBody.scrollTop = chatBody.scrollHeight;
 }
 
-function goto_form() {
-  const modal = new bootstrap.Modal(
-    document.getElementById("applicationModal")
-  );
-  modal.show();
-}
-
 function btnClick(el) {
   const $el = $(el);
 
